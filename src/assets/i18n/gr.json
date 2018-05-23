@@ -1,0 +1,9 @@
+{
+    "PERSON": {
+      "INTERNATIONALIZATION":"Internationalisierung",
+      "FIRSTNAME": "Vorname",
+      "LASTNAME": "Nachname",
+      "DATEOFBIRTH": "Geburtsdatum",
+      "CREATE": "Erstellen"
+    }
+  }

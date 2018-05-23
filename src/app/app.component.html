@@ -1,0 +1,44 @@
+<div class="example-container">
+
+  <div class="example-title">
+          <h3>{{ 'PERSON.INTERNATIONALIZATION' | translate }}</h3>
+        </div>
+      <mat-form-field>
+        <mat-select #langSelect (change)="switchLanguage(langSelect.value)" [(value)]="selected">
+          <mat-option *ngFor="let lang of translate.getLangs()" [value]="lang" [(ngModel)]="user.lang">{{ lang }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'PERSON.FIRSTNAME' | translate }}" [(ngModel)]="user.firstname">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'PERSON.LASTNAME' | translate }}" [(ngModel)]="user.lastname">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="{{ 'PERSON.DATEOFBIRTH' | translate }}" [(ngModel)]="user.dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click) = 'contactListDetails(user)'>{{'PERSON.CREATE'| translate }}</button>
+          </div>
+          <div class="example-container" *ngIf="IsVisible">
+              <table cellpadding="0" cellspacing="0" >
+                  <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Date Of Birth</th>
+                  </tr>
+                  <tbody *ngFor = "let user of contactList">
+                      <tr>
+                          <td>{{user.firstname}}</td>
+                          <td>{{user.lastname}}</td>
+                          <td>{{user.dob}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          
+
+
+
+        
